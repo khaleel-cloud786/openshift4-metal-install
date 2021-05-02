@@ -1,0 +1,23 @@
+$TTL    604800
+@       IN      SOA     ocp-svc.ocp.shaik. contact.ocp.shaik (
+                  1     ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800     ; Minimum
+)
+
+  IN      NS      ocp-svc.ocp.shaik.
+
+1      IN    PTR    ocp-svc.ocp.shaik.
+1      IN    PTR    api.khaleel.ocp.shaik.
+1      IN    PTR    api-int.khaleel.ocp.shaik.
+;
+200    IN    PTR    ocp-bootstrap.khaleel.ocp.shaik.
+;
+201    IN    PTR    ocp-cp-1.khaleel.ocp.shaik.
+202    IN    PTR    ocp-cp-2.khaleel.ocp.shaik.
+203    IN    PTR    ocp-cp-3.khaleel.ocp.shaik.
+;
+211    IN    PTR    ocp-w-1.khaleel.ocp.shaik.
+212    IN    PTR    ocp-w-2.khaleel.ocp.shaik.

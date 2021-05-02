@@ -1,0 +1,41 @@
+$TTL    604800
+@       IN      SOA     ocp-svc.ocp.shaik. contact.ocp.shaik (
+                  1     ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800     ; Minimum
+)
+        IN      NS      ocp-svc
+
+ocp-svc.ocp.shaik.          IN      A       192.168.22.1
+
+; Temp Bootstrap Node
+ocp-bootstrap.khaleel.ocp.shaik.        IN      A      192.168.22.200
+
+; Control Plane Nodes
+ocp-cp-1.khaleel.ocp.shaik.         IN      A      192.168.22.201
+ocp-cp-2.khaleel.ocp.shaik.         IN      A      192.168.22.202
+ocp-cp-3.khaleel.ocp.shaik.         IN      A      192.168.22.203
+
+; Worker Nodes
+ocp-w-1.khaleel.ocp.shaik.        IN      A      192.168.22.211
+ocp-w-2.khaleel.ocp.shaik.        IN      A      192.168.22.212
+
+; OpenShift Internal - Load balancer
+api.khaleel.ocp.shaik.        IN    A    192.168.22.1
+api-int.khaleel.ocp.shaik.    IN    A    192.168.22.1
+*.apps.khaleel.ocp.shaik.     IN    A    192.168.22.1
+
+; ETCD Cluster
+etcd-0.khaleel.ocp.shaik.    IN    A     192.168.22.201
+etcd-1.khaleel.ocp.shaik.    IN    A     192.168.22.202
+etcd-2.khaleel.ocp.shaik.    IN    A     192.168.22.203
+
+; OpenShift Internal SRV records (cluster name = khaleel)
+_etcd-server-ssl._tcp.khaleel.ocp.shaik.    86400     IN    SRV     0    10    2380    etcd-0.khaleel
+_etcd-server-ssl._tcp.khaleel.ocp.shaik.    86400     IN    SRV     0    10    2380    etcd-1.khaleel
+_etcd-server-ssl._tcp.khaleel.ocp.shaik.    86400     IN    SRV     0    10    2380    etcd-2.khaleel
+
+oauth-openshift.apps.khaleel.ocp.shaik.     IN     A     192.168.22.1
+console-openshift-console.apps.khaleel.ocp.shaik.     IN     A     192.168.22.1
